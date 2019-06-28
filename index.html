@@ -1,0 +1,32 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+
+var loc = window.location.toString();
+params = loc.split('#')[1];
+/*
+params2 = loc.split('&')[2];
+params3 = loc.split('&')[3];
+params4 = loc.split('&')[4];
+params5 = loc.split('&')[5];
+params6 = loc.split('&')[6];
+*/
+
+iframeSrc="https://use.mazemap.com/"
+//iframe = document.getElementById('myiframe');
+if (params) {
+	iframeSrc = iframeSrc + '#' + params;
+} else {
+	iframeSrc="https://use.mazemap.com/#v=1&zlevel=1&left=6.8364798&right=6.8751406&top=52.2475455&bottom=52.2355007&sharepoitype=poi&sharepoi=198160&campusid=171"
+}
+document.getElementById('myiframe').src=iframeSrc;
+console.log(myiframe.src);
+});
+</script>
+</head>
+<body>
+<iframe id="myiframe" src="" width="100%" height="100%"></iframe>
+</body>
+</html>
